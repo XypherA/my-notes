@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML DOM Methods Cheat Sheet</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #121212;
+      color: #e0e0e0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h2 {
+      margin-top: 30px;
+      color: #4dabf7;
+      border-left: 5px solid #4dabf7;
+      padding-left: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      font-size: 15px;
+      background: #1e1e1e;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background: #333;
+      color: #ffcc66;
+    }
+    tr:nth-child(even) {
+      background: #2a2a2a;
+    }
+    tr:hover {
+      background: #333333;
+    }
+    code {
+      background: #2d2d2d;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #90ee90;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌙 HTML DOM Methods Cheat Sheet (Dark Mode)</h1>
+
+  <h2>🔹 1. Finding Elements</h2>
+  <table>
+    <tr><th>Method</th><th>Description</th><th>Example</th></tr>
+    <tr><td>getElementById(id)</td><td>Find element by ID (returns 1 element)</td><td><code>document.getElementById("title")</code></td></tr>
+    <tr><td>getElementsByClassName(class)</td><td>Find all elements by class (HTMLCollection)</td><td><code>document.getElementsByClassName("btn")[0]</code></td></tr>
+    <tr><td>getElementsByTagName(tag)</td><td>Find all elements by tag (HTMLCollection)</td><td><code>document.getElementsByTagName("p")[0]</code></td></tr>
+    <tr><td>querySelector(selector)</td><td>Find first element matching CSS selector</td><td><code>document.querySelector(".btn")</code></td></tr>
+    <tr><td>querySelectorAll(selector)</td><td>Find all matching elements (NodeList)</td><td><code>document.querySelectorAll("ul li")</code></td></tr>
+  </table>
+
+  <h2>🔹 2. Changing Content</h2>
+  <table>
+    <tr><th>Method</th><th>Description</th><th>Example</th></tr>
+    <tr><td>.innerHTML</td><td>Get/Set HTML inside element</td><td><code>el.innerHTML = "&lt;b&gt;Hello&lt;/b&gt;"</code></td></tr>
+    <tr><td>.textContent</td><td>Get/Set text only</td><td><code>el.textContent = "Hello"</code></td></tr>
+    <tr><td>.innerText</td><td>Get/Set visible text only</td><td><code>el.innerText = "Hello"</code></td></tr>
+  </table>
+
+  <h2>🔹 3. Changing Styles</h2>
+  <table>
+    <tr><th>Method</th><th>Description</th><th>Example</th></tr>
+    <tr><td>.style.property</td><td>Change inline CSS</td><td><code>el.style.color = "red"</code></td></tr>
+    <tr><td>classList.add()</td><td>Add a class</td><td><code>el.classList.add("active")</code></td></tr>
+    <tr><td>classList.remove()</td><td>Remove a class</td><td><code>el.classList.remove("active")</code></td></tr>
+    <tr><td>classList.toggle()</td><td>Toggle a class</td><td><code>el.classList.toggle("hidden")</code></td></tr>
+    <tr><td>classList.contains()</td><td>Check if element has a class</td><td><code>el.classList.contains("active")</code></td></tr>
+  </table>
+
+  <h2>🔹 4. Creating & Removing Elements</h2>
+  <table>
+    <tr><th>Method</th><th>Description</th><th>Example</th><th></th></tr>
+    <tr><td>createElement(tag)</td><td>Create new element</td><td><code>document.createElement("div")</code></td></tr>
+    <tr><td>appendChild(node)</td><td>Add element inside parent</td><td><code>parent.appendChild(child)</code></td></tr>
+    <tr><td>removeChild(node)</td><td>Remove child element</td><td><code>parent.removeChild(child)</code></td></tr>
+    <tr><td>replaceChild(new, old)</td><td>Replace element</td><td><code>parent.replaceChild(newNode, oldNode)</code></td></tr>
+  </table>
+
+  <h2>🔹 5. Events</h2>
+  <table>
+    <tr><th>Method</th><th>Description</th><th>Example</th></tr>
+    <tr><td>addEventListener(event, fn)</td><td>Attach event listener</td><td><code>el.addEventListener("click", fn)</code></td></tr>
+    <tr><td>removeEventListener(event, fn)</td><td>Remove event listener</td><td><code>el.removeEventListener("click", fn)</code></td></tr>
+    <tr><td>onclick</td><td>Shortcut for click event</td><td><code>el.onclick = fn</code></td></tr>
+  </table>
+
+  <h2>🔹 6. Attributes</h2>
+  <table>
+    <tr><th>Method</th><th>Description</th><th>Example</th></tr>
+    <tr><td>getAttribute(name)</td><td>Get attribute value</td><td><code>el.getAttribute("href")</code></td></tr>
+    <tr><td>setAttribute(name, value)</td><td>Set attribute</td><td><code>el.setAttribute("href", "google.com")</code></td></tr>
+    <tr><td>removeAttribute(name)</td><td>Remove attribute</td><td><code>el.removeAttribute("disabled")</code></td></tr>
+  </table>
+
+  <h2>🔹 7. Traversing DOM</h2>
+  <table>
+    <tr><th>Property</th><th>Description</th><th>Example</th></tr>
+    <tr><td>.parentNode</td><td>Get parent element</td><td><code>el.parentNode</code></td></tr>
+    <tr><td>.children</td><td>Get all child elements</td><td><code>el.children</code></td></tr>
+    <tr><td>.firstChild</td><td>Get first child</td><td><code>el.firstChild</code></td></tr>
+    <tr><td>.lastChild</td><td>Get last child</td><td><code>el.lastChild</code></td></tr>
+    <tr><td>.nextSibling</td><td>Get next node</td><td><code>el.nextSibling</code></td></tr>
+    <tr><td>.previousSibling</td><td>Get previous node</td><td><code>el.previousSibling</code></td></tr>
+  </table>
+
+</body>
+</html>
